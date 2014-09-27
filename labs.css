@@ -1,0 +1,38 @@
+*{
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+h1{
+  font-size: 1.25em;
+  margin:0;
+  color:#888;
+}
+
+sup{
+  color:#888;
+}
+
+body{
+  background:black;
+  color:white;
+  font-family:verdana;
+  line-height:4em;
+  word-spacing: .5em;
+}
+
+#paint{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:2;
+  cursor:crosshair;
+}
+
+#text{
+  font-size:2em;
+  padding:1em;
+}
+
+
