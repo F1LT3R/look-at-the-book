@@ -103,7 +103,7 @@
     }
 
     if (mouseDown && mode == ERASE){
-      context.clearRect(mouseX-24, (mouseY-24)+window.scrollY, 48, 48);
+      context.clearRect(mouseX-32, (mouseY-32)+window.scrollY, 64, 64);
     }
 
     lastMouseX = mouseX;
