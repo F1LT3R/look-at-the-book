@@ -1,6 +1,9 @@
 (function(){
 
-
+  // Mode ENUMS
+  var PAINT = 1
+    , ERASE = 2
+    ;
 
   var settings = {
       background: "#000"
@@ -15,11 +18,26 @@
     , height =  0
     , context = paint.getContext('2d')
     , highlightColor = "yellow"
+    , mode = PAINT
     ;
 
-    window.updateColor = function(color){
+
+
+  // OuterDocument Interfaces
+  window.updateColor = function(color){
       highlightColor = color;      
     }
+
+  window.updateMode = function(newMode){
+    switch (newMode) {
+      case 'paint':
+        mode = PAINT;
+        break;
+      case 'erase':
+        mode = ERASE;
+        break;
+    }
+  }
 
   function formatScripture(e){
     var scriptureMarkup = '<h1>'+unescape(settings.defaultScripture)+'</h1> ';
@@ -72,17 +90,22 @@
   
 
   function onTimer(){
-    if (mouseDown){
+    if (mouseDown && mode == PAINT){
       context.strokeStyle = highlightColor;
       context.lineWidth = "6";
       context.lineCap = "round";
       context.lineJoin = "round";
       context.beginPath();
-      context.moveTo(lastMouseX, lastMouseY+window.scrollY);
-      context.lineTo(mouseX, mouseY+window.scrollY);
+      context.moveTo(lastMouseX, lastMouseY + window.scrollY);
+      context.lineTo(mouseX, mouseY + window.scrollY);
       context.closePath();
       context.stroke();
     }
+
+    if (mouseDown && mode == ERASE){
+      context.clearRect(mouseX-24, (mouseY-24)+window.scrollY, 48, 48);
+    }
+
     lastMouseX = mouseX;
     lastMouseY = mouseY;
   }
