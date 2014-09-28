@@ -14,8 +14,12 @@
     , width =  0
     , height =  0
     , context = paint.getContext('2d')
+    , highlightColor = "yellow"
     ;
 
+    window.updateColor = function(color){
+      highlightColor = color;      
+    }
 
   function formatScripture(e){
     var scriptureMarkup = '<h1>'+unescape(settings.defaultScripture)+'</h1> ';
@@ -31,15 +35,17 @@
   function getScripture(){
     var url = settings.scriptureServicePath + settings.defaultScripture + settings.scriptureServiceOpts;
     
-    $.ajax({
-      url: url,
-      dataType: 'jsonp',
-      success: function(e){
-        formatScripture(e);
-      }
-    });
+    // $.ajax({
+    //   url: url,
+    //   dataType: 'jsonp',
+    //   success: function(e){
+    //     formatScripture(e);
+    //   }
+    // });
 
-    
+    // text.innerHTML = '<h1>John 3:16-17</h1> <p><sup>16</sup> <span>For this is the way God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.</span></p><p><sup>17</sup> <span>For God did not send his Son into the world to condemn the world, but that the world should be saved through him. <a style="" target="_blank" href="http://bible.org/page.php?page_id=3537">&copy;NET</a></span></p>';
+    text.innerHTML = '<h1>Romans 8:26-27</h1> <p><sup>26</sup> Likewise the Spirit helps us in our weakness. For we do not know what to pray for as we ought, but the Spirit himself intercedes for us with groanings too deep for words.</p> <p><sup>27</sup>And he who searches hearts knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God. </p>';
+    setupCanvas();
     // text.innerHTML = '<h1></h1><sup>16</sup> <span>For this is the way God loved the world: He gave his one and only Son, so that everyone who believes in him will not perish but have eternal life.</span> <sup>17</sup> <span>For God did not send his Son into the world to condemn the world, but that the world should be saved through him. <a target="_blank" href="http://bible.org/page.php?page_id=3537">&copy;NET</a></span>';
   }
   
@@ -67,7 +73,7 @@
 
   function onTimer(){
     if (mouseDown){
-      context.strokeStyle = "#FF0";
+      context.strokeStyle = highlightColor;
       context.lineWidth = "6";
       context.lineCap = "round";
       context.lineJoin = "round";

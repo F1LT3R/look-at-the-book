@@ -3,3 +3,30 @@
   padding:0;
   margin:0;
 }
+
+#tools{
+  background:#444;
+  padding:8px;
+}
+
+.color{
+  width:64px;
+  height:64px;
+  border:8px solid #000;
+  float:left;
+  margin:4px;
+}
+
+.color.selected {
+  border-color: #AAA;
+}
+
+.red{background:red;}
+.yellow{background:yellow;}
+.limegreen{background:limegreen;}
+.dodgerblue{background:dodgerblue;}
+.orange{background:orange;}
+.purple{background:purple;}
+.grey{background:grey;}
+
+.clear{clear:both;}
