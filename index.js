@@ -5,9 +5,12 @@
   });
 
 
-  $('.color').click(function(){
-    var color = this.className.split(' ')[0];
+  $('.color').click(function(elem){
+    var $elem = $(this);
+    var color = $elem.css('backgroundColor');
+    console.log(color, this.className);
+
     lab.contentWindow.updateColor(color);
     $('.color').removeClass('selected');
-    $(this).addClass('selected');
+    $elem.addClass('selected');
   });

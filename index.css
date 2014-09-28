@@ -7,6 +7,7 @@
 #tools{
   background:#444;
   padding:8px;
+  border-top:4px solid #FFF;
 }
 
 .color{
@@ -18,15 +19,26 @@
 }
 
 .color.selected {
-  border-color: #AAA;
+  border-color: #FFF;
 }
 
-.red{background:red;}
-.yellow{background:yellow;}
-.limegreen{background:limegreen;}
-.dodgerblue{background:dodgerblue;}
-.orange{background:orange;}
-.purple{background:purple;}
-.grey{background:grey;}
-
+.c1{ background:#F00;}
+.c2{ background:#FA0;}
+.c3{ background:#FF0;}
+.c4{ background:#AF0;}
+.c5{ background:#0F0;}
+.c6{ background:#0FA;}
+.c7{ background:#0FF;}
+.c8{ background:#0AF;}
+.c9{ background:#A0F;}
+.c10{background:#F0F;}
+.c11{background:#F0A;}
+.c12{background:#AAA;}
+.c13{background:#FFF;}
 .clear{clear:both;}
+
+
+
+
+
+
