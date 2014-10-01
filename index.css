@@ -46,6 +46,34 @@
   background-size: 32px 32px;
 }
 
+#framecontrols{
+  background:#222;
+}
+
+button{
+  width:64px;
+  height:64px;
+  border-top   :8px solid #FFF;
+  border-left  :8px solid #FFF;
+  border-right :8px solid #777;
+  border-bottom:8px solid #777;
+  float:left;
+  margin:8px;
+  font-family:consolas;
+  font-size: 2em;
+  font-weight:bold;
+  color:#000;
+  text-shadow:-1px -1px 0px #EEE;
+}
+
+button:active{
+  border-top   :8px solid #444;
+  border-left  :8px solid #444;
+  border-right :8px solid #EEE;
+  border-bottom:8px solid #EEE;
+  color:#444;
+  text-shadow:1px 1px 0px #EEE;
+}
 
 
 
@@ -55,7 +83,23 @@
 
 
 
+.frame{
+  width :128px;
+  height:128px;
+  border:8px solid #444;
+  float:left;
+  margin:8px;
+}
 
+.frame div{
+  position:absolute;
+  font-family: arial;
+  color:white;
+  font-size:14px;
+  padding:4px;
+  width:120px;
+  background:rgba(255,255,255,.25);
+}
 
 
 
