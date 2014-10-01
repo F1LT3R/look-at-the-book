@@ -109,8 +109,8 @@
   var timer = setInterval(onTimer, 30);
 
   function movemouse(e){
-    mouseX = e.x || e.pageX;
-    mouseY = e.y || e.pageX;
+    mouseX = e.x || e.clientX;
+    mouseY = e.y || e.clientX;
   }
 
   function mousedown(e){
@@ -166,9 +166,9 @@
   addEventListener('mousemove', movemouse);
   addEventListener('mousedown', mousedown);
   addEventListener('mouseup', mouseup);
-  addEventListener('MSPointerMove', movemouse);
-  addEventListener('MSPointerDown', mousedown);
-  addEventListener('MSPointerUp', mouseup);
+  addEventListener('pointermove', movemouse);
+  addEventListener('pointerdown', mousedown);
+  addEventListener('pointerup', mouseup);
   addEventListener('keyup', keyup);
 
 
