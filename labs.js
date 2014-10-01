@@ -69,7 +69,7 @@
     height =  docElem.offsetHeight;
     paint.width = width;
     paint.height = height;
-    console.log(context);
+    // console.log(context);
   }
 
 
@@ -124,7 +124,7 @@
 
 
   window.exportDoodle = function(){
-    console.log( paint.toDataURL() );
+    // console.log( paint.toDataURL() );
   }
 
 
@@ -166,6 +166,9 @@
   addEventListener('mousemove', movemouse);
   addEventListener('mousedown', mousedown);
   addEventListener('mouseup', mouseup);
+  addEventListener('MSPointerMove', movemouse);
+  addEventListener('MSPointerDown', mousedown);
+  addEventListener('MSPointerUp', mouseup);
   addEventListener('keyup', keyup);
 
 

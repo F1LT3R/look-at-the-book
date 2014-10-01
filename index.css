@@ -46,7 +46,9 @@
   background-size: 32px 32px;
 }
 
-
+iframe{
+  min-height:400px;
+}
 
 
 
