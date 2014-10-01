@@ -109,8 +109,8 @@
   var timer = setInterval(onTimer, 30);
 
   function movemouse(e){
-    mouseX = e.x;
-    mouseY = e.y;
+    mouseX = e.x || e.pageX;
+    mouseY = e.y || e.pageX;
   }
 
   function mousedown(e){
